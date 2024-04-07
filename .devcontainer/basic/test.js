@@ -1,2 +1,5 @@
-console.log("himanshu");
-console.log("bhai ye kaam ho ku nhi raha ha ");
+const name = "himanshu sah";
+var clas = 19;
+let school = "npsei pithororagarh";
+
+console.table([name,clas,school]);
