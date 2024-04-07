@@ -53,3 +53,34 @@ refrence(Non Premitive): Array, Object, Functions
 // const myFunction = function(){
 //     console.log("hello world")
 // }
+
+// ***********************Memory**************************
+
+// stack(premitiv) , Heap (Non-premitiv)
+
+let myName = "harshit";
+
+let nickName = myName;
+
+// console.log(myName);
+// console.log(nickName);
+
+nickName = 'himanshu';
+
+// console.log(myName);
+// console.log(nickName);
+
+
+const myDetail={
+    name: "harshit",
+    upiid: "harshitsah@ybl",
+
+}
+
+// console.log(myDetail);
+
+const myDetail2 = myDetail;
+myDetail2.name = "himanshu";
+
+// console.log(myDetail);
+// console.log(myDetail2);
