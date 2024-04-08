@@ -47,7 +47,7 @@ const user = {
     }
 }
 
-console.log(user.name.userName.fullName.lastName);
+// console.log(user.name.userName.fullName.lastName);
 
 const obj1 = {1:"A",2:"B"}
 const obj2 = {3:"A",4:"B"}
@@ -63,4 +63,18 @@ const obj4 = {...obj1,...obj2,...obj3};
 // console.log(Object.values(myDetails)); // value pair array
 // console.log(Object.entries(myDetails));//make all key value pair in array
 
-console.log(myDetails.hasOwnProperty('Name'));
+// console.log(myDetails.hasOwnProperty('Name'));
+
+
+//  destructuring in object
+
+const course ={
+    courseName: "Learn English",
+    price :"99",
+    courseInstructure: "harsh",
+}
+
+console.log(course.courseInstructure);
+
+const {courseInstructure:instructor}= course;
+console.log(instructor);
