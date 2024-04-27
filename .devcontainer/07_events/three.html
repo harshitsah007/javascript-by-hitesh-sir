@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="name">Hello!. Himanshu</h1>
+    <button id="stop">Stop</button>
+    <button id="start">Start</button>
+  </body>
+  <script>
+    let intervalId;
+    const name = document.querySelector("#name");
+    const start = function () {
+      console.log('start')
+      intervalId = setInterval(setName, 1000);
+      function setName() {
+        name.innerHTML = `Hii.  this is :- ` + Date();
+      }
+    };
+
+    const stop = function () {
+      clearInterval(intervalId);
+      name.innerHTML = `Hello himanshu`
+    };
+
+    // const start = function () {
+    //   interval = setInterval(setName, 1000);
+
+    //   function setName() {
+    //     name.innerHTML = `Hii.  this is :- ` + Date();
+    //   }
+    // };
+
+    // const stop = function () {
+    //   console.log("stoppe");
+    //   clearInterval(interval);
+    // };
+
+    document.querySelector("#start").addEventListener("click", start);
+    document.querySelector("#stop").addEventListener("click", stop);
+  </script>
+</html>

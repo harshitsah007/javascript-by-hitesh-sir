@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>html element</title>
+  </head>
+  <body style="background-color: #414141; color: aliceblue">
+    <h2>Amazing image</h2>
+    <div>
+      <ul id="images">
+        <li>
+          <img
+            width="200px"
+            id="girl1"
+            src="https://plus.unsplash.com/premium_photo-1680082510819-cace32f84aeb?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHx8"
+            alt="photoshop"
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="girl2"
+            src="https://images.unsplash.com/photo-1604904612715-47bf9d9bc670?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Njh8fG1vZGVsfGVufDB8fDB8fHww"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="girl3"
+            src="https://images.unsplash.com/photo-1583766395091-2eb9994ed094?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTZ8fG1vZGVsfGVufDB8fDB8fHww"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="girl4"
+            src="https://images.unsplash.com/photo-1562572159-4efc207f5aff?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjd8fG1vZGVsfGVufDB8fDB8fHww"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="girl5"
+            src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjV8fG1vZGVsfGVufDB8fDB8fHww"
+            alt=""
+          />
+        </li>
+        <li>
+          <img
+            width="200px"
+            id="girl6"
+            src="https://images.unsplash.com/photo-1604904612715-47bf9d9bc670?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Njh8fG1vZGVsfGVufDB8fDB8fHww"
+            alt=""
+          />
+        </li>
+        <li>
+          <a style="color: #fff" href="http://www.google.com" id="google"
+            >Google</a
+          >
+        </li>
+      </ul>
+    </div>
+  </body>
+  <script>
+    // // document.querySelector('#girl3').onclick= function(){
+    // //   alert("this is a third girl")
+    // // }
+
+    // // type, timestamp, defaultPrevented
+    // // target, toElement, srcElement, currentTarget,
+    // // clientX, ctrlKey, screenX, keyCode
+
+    // // document.querySelector('#images').addEventListener('click',function(e){
+    // //   console.log(e);
+    // // }, false)// event propogation
+
+    // document.querySelector('#images').addEventListener('click',function(e){
+    //   console.log("clicked inside the ul");
+    // },false)// bubbling
+
+    // document.querySelector('#girl4').addEventListener('click',function(e){
+    //   console.log("click girl no 4");
+    //   // e.stopPropagation()
+    // },true)//capturing
+
+    // document.getElementById('google').addEventListener('click',function(e){
+    //   e.preventDefault();
+    //   e.stopPropagation();
+    //   console.log("google clicked")
+    // },false)
+
+    // click on the image and remove the image
+
+    const images = document.querySelector("#images");
+    images.addEventListener(
+      "click",
+      function (e) {
+        console.log(e.target.tagName);
+        if(e.target.tagName === 'IMG'){
+          let removeImg = e.target.parentNode;
+        removeImg.remove();
+        }
+        
+        // removeImg.parentNode.removeChild(removeImg);
+      },
+      false
+    );
+  </script>
+</html>

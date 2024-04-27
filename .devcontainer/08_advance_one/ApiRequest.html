@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #cointainer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-basis: 500px;
+        
+      }
+      #dp {
+        display: flex;
+        flex-direction: column;
+      }
+      #hello {
+        display: flex;
+        flex-direction: column;
+      }
+      button {
+        width: 170px;
+        height: 50px;
+        font-size: 40px;
+        color: green;
+        background-color: #da9131;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <div id="cointainer">
+        <div id="dp"></div>
+        <p id="hello"></p>
+
+        <button id="follower">user</button>
+      </div>
+    </div>
+  </body>
+
+  <script>
+    const requesUrl = "https://api.github.com/users/harshitsah007";
+    const user = document.getElementById("follower");
+
+    const xhr = new XMLHttpRequest();
+    xhr.open("GET", requesUrl);
+    xhr.onreadystatechange = function () {
+      // console.log(xhr.readyState);
+
+      const data = JSON.parse(this.responseText);
+      console.log(data);
+      const folw = data.following;
+      const Username = data.name;
+      const userimage = data.avatar_url;
+      const bio = data.bio;
+      const userId = data.id;
+      const userFollowby = data.followers;
+
+      // console.log(Username)
+
+      const showUser = function () {
+        const followerId = document.querySelector("#hello");
+        const userDp = document.querySelector("#dp");
+
+        const followerElement0 = document.createElement("IMG");
+        followerElement0.setAttribute("src", userimage);
+        const followerElement1 = document.createElement("h1");
+        const followerElement2 = document.createElement("h2");
+        const followerElement5 = document.createElement("p");
+        const followerElement3 = document.createElement("p");
+        const followerElement4 = document.createElement("p");
+
+        followerElement0.innerHTML = `${userimage}`;
+        followerElement1.innerHTML = `Name :- ${Username}`;
+        followerElement2.innerHTML = `id :- ${userId}`;
+        followerElement5.innerHTML = `${bio}`;
+        followerElement3.innerHTML = `follower are :- ${userFollowby}`;
+        followerElement4.innerHTML = `following are :- ${folw}`;
+
+        userDp.appendChild(followerElement0);
+        followerId.appendChild(followerElement1);
+        followerId.appendChild(followerElement2);
+        followerId.appendChild(followerElement5);
+        followerId.appendChild(followerElement3);
+        followerId.appendChild(followerElement4);
+      };
+
+      if (xhr.readyState === 4) {
+        user.addEventListener("click", showUser);
+      }
+    };
+    xhr.send();
+  </script>
+</html>
